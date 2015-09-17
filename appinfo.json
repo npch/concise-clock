@@ -1,0 +1,18 @@
+{
+  "uuid": "60367b36-35b9-4ed3-8467-4a8920c5767a",
+  "shortName": "conciseclock",
+  "longName": "Concise Clock",
+  "companyName": "Neil Chue Hong",
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
