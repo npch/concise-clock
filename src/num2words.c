@@ -89,9 +89,9 @@ static const char* const INTERVALS[] = {
   "ten past",         // [2]  08 - 12 = ten past H
   "quarter past",     // [3]  13 - 17 = quarter past H
   "twenty past",      // [4]  18 - 22 = twenty past H
-  "twenty-five past", // [5]  23 - 27 = twenty five past H
+  "twenty five past", // [5]  23 - 27 = twenty five past H
   "half past",        // [6]  28 - 32 = half past H
-  "twenty-five to",   // [7]  33 - 37 = twenty five to H
+  "twenty five to",   // [7]  33 - 37 = twenty five to H
   "twenty to",        // [8]  38 - 42 = twenty to H
   "quarter to",       // [9]  43 - 47 = quarter to H
   "ten to",           // [10] 48 - 52 = ten to H
@@ -153,13 +153,15 @@ void fuzzy_time_to_words(int hours, int minutes, char* words, size_t length) {
     if (fuzzy_hours > 23) {
       fuzzy_hours = 0;
     }
+  } else if (fuzzy_minutes > 6 && fuzzy_minutes < 12 ) {
+    fuzzy_hours +=1;
   }
 
   size_t remaining = length;
   memset(words, 0, length);
 
   if (fuzzy_minutes == 0) {
-    remaining -= append_string(words, remaining, CONCISETERMS[fuzzy_terms]);
+    remaining -= append_string(words, remaining, BRITTERMS[fuzzy_terms]);
     remaining -= append_string(words, remaining, " ");
     remaining -= append_string(words, remaining, HOURS[fuzzy_hours]);
     if(fuzzy_hours != 0 && fuzzy_hours != 12) {

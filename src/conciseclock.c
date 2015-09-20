@@ -20,10 +20,10 @@ static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_frame(window_layer);
 
-  s_text_layer = text_layer_create(GRect(0, 20, bounds.size.w, bounds.size.h - 20));
+  s_text_layer = text_layer_create(GRect(2, 5, bounds.size.w - 4, bounds.size.h - 10));
   text_layer_set_background_color(s_text_layer, GColorWhite);
   text_layer_set_text_color(s_text_layer, GColorBlack);
-  text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_DROID_SERIF_28_BOLD));
+  text_layer_set_font(s_text_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
   layer_add_child(window_layer, text_layer_get_layer(s_text_layer));
 
   time_t now = time(NULL);
