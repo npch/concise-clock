@@ -49,7 +49,7 @@ static const char* const CONCISETERMS[] = {
 };
 
 static const char* const BRITTERMS[] = {
-  "Getting on",
+  "Getting on for",
   "Tad before",
   "Bang on",
   "Smidge after",
@@ -150,11 +150,11 @@ void fuzzy_time_to_words(int hours, int minutes, char* words, size_t length) {
   if (fuzzy_minutes > 11) {
     fuzzy_minutes = 0;
     fuzzy_hours += 1;
-    if (fuzzy_hours > 23) {
-      fuzzy_hours = 0;
-    }
   } else if (fuzzy_minutes > 6 && fuzzy_minutes < 12 ) {
     fuzzy_hours +=1;
+  }
+  if (fuzzy_hours > 23) {
+    fuzzy_hours = 0;
   }
 
   size_t remaining = length;
